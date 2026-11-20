@@ -17,7 +17,7 @@ pipeline {
             steps {
                 bat 'python -m py_compile app.py'
         }
-
+        }
         stage('3. Build & Tag Docker Image') {
             steps {
                 bat "docker build -t ${REGISTRY}/${IMAGE_NAME}:${BUILD_NUMBER} -t ${REGISTRY}/${IMAGE_NAME}:latest ."
